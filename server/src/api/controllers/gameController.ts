@@ -29,4 +29,14 @@ export class GameController {
 
     }
 
+    @OnMessage("on_win")
+    public async onWin(
+        @SocketIO() io: Server,
+        @ConnectedSocket() socket: Socket,
+        @MessageBody() message: any
+    ) {
+        const gameRoom = this.getGameRoom(socket)
+        socket.to(gameRoom).emit('game_win', message)
+    }
+
 }
