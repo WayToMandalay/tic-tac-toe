@@ -40,6 +40,11 @@
   border-bottom: 3px solid pink;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
 .block {
   position: absolute;
   width: 100%;

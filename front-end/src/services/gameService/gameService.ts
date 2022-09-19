@@ -1,5 +1,5 @@
 import {Socket} from "socket.io-client";
-import {IGameStart, IPlayMatrix} from "../../components/game/game";
+import {IGameStart, IMessage, IPlayMatrix} from "../../components/game/game";
 
 
 class GameService {
@@ -24,6 +24,14 @@ class GameService {
 
     public async onGameStart(socket: Socket, listener: (args: IGameStart) => void) {
         socket.on('start_game', (args) => listener(args))
+    }
+
+    public async onGameWin(socket: Socket, listener: (message: IMessage) => void) {
+        socket.on('game_win', (message) => listener(message))
+    }
+
+    public async onWin(socket: Socket, message: IMessage) {
+        socket.emit('on_win', message)
     }
 }
 

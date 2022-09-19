@@ -7,6 +7,8 @@ export interface IOurStateProps {
     setPlayerSymbol: (symbol: 'x' | 'o') => void
     isTurn: boolean
     setTurn: (turn: boolean) => void
+    isStarted: boolean
+    setIsStarted: (started: boolean) => void
 }
 
 const ourState: IOurStateProps = {
@@ -15,7 +17,9 @@ const ourState: IOurStateProps = {
     playerSymbol: 'x',
     setPlayerSymbol: () => {},
     isTurn: false,
-    setTurn: () => {}
+    setTurn: () => {},
+    isStarted: false,
+    setIsStarted: () => {}
 
 }
 

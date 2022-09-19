@@ -11,6 +11,7 @@ function App() {
     const [inRoom, setInRoom] = useState(false)
     const [playerSymbol, setPlayerSymbol] = useState<'x' | 'o'>('x')
     const [isTurn, setTurn] = useState(false)
+    const [isStarted, setIsStarted] = useState(false)
 
     const contextValue :IOurStateProps = {
         inRoom,
@@ -18,7 +19,9 @@ function App() {
         playerSymbol,
         setPlayerSymbol,
         isTurn,
-        setTurn
+        setTurn,
+        isStarted,
+        setIsStarted
     }
 
     const connectSocket = async () => {
